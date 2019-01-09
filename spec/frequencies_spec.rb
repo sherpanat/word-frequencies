@@ -11,4 +11,10 @@ describe '#frequencies' do
     expect(hash_of_frequencies['salut']).to eq(2)
     expect(hash_of_frequencies['toi']).to eq(1)
   end
+
+  it 'should return a hash of frequencies wherever string capitalization' do
+    hash_of_frequencies = frequencies('Salut toi salut')
+    expect(hash_of_frequencies['salut']).to eq(2)
+    expect(hash_of_frequencies['toi']).to eq(1)
+  end
 end

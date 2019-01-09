@@ -2,8 +2,12 @@ require_relative 'frequencies'
 
 sentence = read_file('speech.txt')
 word_frequencies = frequencies(sentence)
-word_frequencies.values.sort
+ordered_frequencies = word_frequencies.sort_by{|key, value| value}.reverse
 
-word_frequencies.each do |word, frequence|
-  puts "'#{word}' is used #{frequence} times in the text"
+ordered_frequencies.first(10).each do |frequence|
+  puts "'#{frequence[0]}' is used #{frequence[1]} times in the text"
 end
+
+# word_frequencies.each do |word, frequence|
+#   puts "'#{word}' is used #{frequence} times in the text"
+# end
